@@ -1,17 +1,19 @@
 import React, { Component } from "react";
+import Render from "react-dom";
 // import Bars from "react-icons/lib/fa/bars";
 // import Calendar from "react-icons/lib/fa/calendar";
 // import Arrow from "react-icons/lib/ti/arrow-right";
 import mood from "./mood-sun1.gif";
 import "./App.css";
-// import { Header } from "./components/header.js";
+import { Header } from "./header.js";
 
 export class App extends Component {
   render() {
-    return;
-    <div className="mood-container">
-      <img src={mood} className="img-mood" alt="mood-image" />
-    </div>;
+    return (
+      <div className="mood-container">
+        <img src={mood} className="img-mood" alt="mood-image" />
+      </div>
+    );
   }
 }
 

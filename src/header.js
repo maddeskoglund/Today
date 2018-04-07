@@ -1,7 +1,8 @@
+import React from "react";
+// import Render from "react-dom";
 import Bars from "react-icons/lib/fa/bars";
-import Calendar from "react-icons/lib/fa/calendar";
+// import Calendar from "react-icons/lib/fa/calendar";
 import Arrow from "react-icons/lib/ti/arrow-right";
-import mood from "./mood-sun1.gif";
 
 const Header = () => (
   <div>
@@ -10,21 +11,17 @@ const Header = () => (
         {" "}
         <Bars />{" "}
       </span>
+      console.log.alert(hi);
       <span className="arrow">
         {" "}
         <Arrow />{" "}
       </span>
     </div>
-    <div className="mood-container">
-      <div>
-        <img src={mood} className="img-mood" alt="mood-image" />
-      </div>
 
-      <div className="kalender">
+    {/* <div className="kalender">
         <span> kalender</span>
         <Calendar />
-      </div>
-    </div>
+      </div> */}
   </div>
 );
 
