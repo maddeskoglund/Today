@@ -4,14 +4,13 @@ import Bars from "react-icons/lib/fa/bars";
 // import Calendar from "react-icons/lib/fa/calendar";
 import Arrow from "react-icons/lib/ti/arrow-right";
 
-const Header = () => (
+export const Header = () => (
   <div>
     <div className="header">
       <span className="bars">
         {" "}
         <Bars />{" "}
       </span>
-      console.log.alert(hi);
       <span className="arrow">
         {" "}
         <Arrow />{" "}

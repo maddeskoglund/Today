@@ -11,6 +11,7 @@ export class App extends Component {
   render() {
     return (
       <div className="mood-container">
+        <Header className="header" />
         <img src={mood} className="img-mood" alt="mood-image" />
       </div>
     );
