@@ -8,10 +8,11 @@ import "./App.css";
 
 export class App extends Component {
   render() {
-    return;
-    <div className="mood-container">
-      <img src={mood} className="img-mood" alt="mood-image" />
-    </div>;
+    return (
+      <div className="mood-container">
+        <img src={mood} className="img-mood" alt="mood-image" />
+      </div>
+    );
   }
 }
 
