@@ -3,6 +3,13 @@ import { Component } from "react";
 
 export class Weather extends Component {
   render() {
+    getWeather = async () => {
+      const api_call = await fetch(
+        `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/16.158/lat/58.5812/data.json`
+      );
+      // const data = await api_call.json();
+    };
+
     // const monthNames = [
     //   "Januari",
     //   "Februari",
