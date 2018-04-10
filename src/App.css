@@ -1,5 +1,4 @@
 .header {
-  color: white;
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
@@ -30,5 +29,13 @@
   vertical-align: middle;
   position: absolute;
   margin-left: 0px;
-  color: white;
+}
+
+.day {
+  margin-left: 50px;
+}
+
+.city {
+  margin-left: 50px;
+  font-size: 2em;
 }

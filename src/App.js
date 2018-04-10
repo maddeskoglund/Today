@@ -4,6 +4,7 @@ import mood from "./mood-sun1.gif";
 import "./App.css";
 import { Header } from "./header.js";
 import { Today } from "./date.js";
+import { Weather } from "./components/weather";
 // import Test from "./components/test";
 
 export class App extends Component {
@@ -13,6 +14,7 @@ export class App extends Component {
         {/* <Test /> */}
         <Header />
         <Today />
+        <Weather />
       </div>
     );
   }

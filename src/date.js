@@ -1,33 +1,65 @@
 import React from "react";
+import { Component } from "react";
 
-// var monthNames = [
-//   "Januari",
-//   "Februari",
-//   "Mars",
-//   "April",
-//   "Maj",
-//   "Juni",
-//   "Juli",
-//   "Augusti",
-//   "September",
-//   "Oktober",
-//   "November",
-//   "December"
-// ];
+export class Today extends Component {
+  render() {
+    const monthNames = [
+      "Januari",
+      "Februari",
+      "Mars",
+      "April",
+      "Maj",
+      "Juni",
+      "Juli",
+      "Augusti",
+      "September",
+      "Oktober",
+      "November",
+      "December"
+    ];
 
-// export class Today extends React.Component {
-function currentDate() {
-  var day = new Date().getDay();
-  var date = new Date().getDate();
-  var month = new Date().getMonth();
-  currentDate();
+    const dayNames = [
+      "Måndag",
+      "Tisdag",
+      "Onsdag",
+      "Torsdag",
+      "Fredag",
+      "Lördag",
+      "Söndag"
+    ];
+
+    const theDay = new Date();
+    const datum = theDay.getDate();
+    const veckodag = dayNames[theDay.getDay()];
+    const month = monthNames[theDay.getMonth()];
+
+    return (
+      <div>
+        <span className="day">
+          {veckodag}, {datum} {month}
+        </span>
+      </div>
+    );
+  }
 }
 
-export const Today = () => (
-  <div>
-    <span>{currentDate}</span>
-  </div>
-);
+export default Today;
+
+// function currentDate() {
+//     var d = new Date()
+
+//     var day = d.getDay();
+//     var date = d.getDate();
+//     var month = d.getMonth();
+
+//   currentDate = day + date + month;
+// }
+
+// export const Today = () => (
+//   <div>
+//     <span>{currentDate}</span>
+//   </div>
+// );
 
 //   render() {
 //     return (
@@ -42,115 +74,3 @@ export const Today = () => (
 // }
 
 // export default Today;
-
-// const getYear = () => {
-//   return new Date().getFullYear();
-// };
-
-// export const Day = ({ getYear }) => (
-//   <div>
-//     <span>`${getYear}`,</span>
-//   </div>
-// );
-
-// export default Day;
-
-// export class Day extends React.Component {
-//   render() {
-//     return (
-//       <div>
-//         {this.getYear}, {new Date().getDay()}, {new Date().getDate()}
-//       </div>
-//       //   function setDate() {
-//       //     const now = new Date();
-//       //     const day = now.getDay();
-//       //     console.log(setDate);
-//       //   };
-//       // <div>{setDate}</div>;
-//     );
-//   }
-// }
-
-// export default Day;
-
-// function getYear() {
-//   return new Date().getFullYear();
-// }
-
-// const today = new Date();
-
-// class Date extends Component {
-
-//     function setDate() {
-//         const now = new Date();
-//         const day = now.getDay();
-
-//     }
-
-//     return (
-
-//     )
-// }
-
-//     return ({formatDay} + ', ' + {dag} + ' ' + {månad})
-//     //   <div>
-//     //     <div className="date">{formatDay.toString()}</div>
-//     //   </div>
-//     );
-
-// export default Date;
-
-// // (function() {
-
-// var day = formatDay(date.getDay()),
-//   date = date.getDate(),
-//   month = formatMonth(date.getMonth());
-
-// function formatDay(d) {
-//   d = parseInt(m, 5);
-
-//   //   if (d < 0) {
-//   //     m = 0
-//   //   } else (m > 6) {
-//   //   m = 6;
-//   //   }
-
-//   var dayNames = [
-//     "Måndag",
-//     "Tisdag",
-//     "Onsdag",
-//     "Torsdag",
-//     "Fredag",
-//     "Lördag",
-//     "Söndag"
-//   ];
-
-//   return dayNames(d);
-// }
-
-// function formatMonth(m) {
-//   m = parseInt(m, 10);
-
-//   //   if (m < 0) {
-//   //     m = 0;
-//   //   } else if (m > 11) {
-//   //     m = 11;
-//   //   }
-
-//   var monthNames = [
-//     "Januari",
-//     "Februari",
-//     "Mars",
-//     "April",
-//     "Maj",
-//     "Juni",
-//     "Juli",
-//     "Augusti",
-//     "September",
-//     "Oktober",
-//     "November",
-//     "December"
-//   ];
-
-//   return monthNames[m];
-// }
