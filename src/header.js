@@ -1,7 +1,5 @@
 import React from "react";
-import Render from "react-dom";
 import Bars from "react-icons/lib/fa/bars";
-// import Calendar from "react-icons/lib/fa/calendar";
 import Arrow from "react-icons/lib/ti/arrow-right";
 
 export const Header = () => (
@@ -20,10 +18,3 @@ export const Header = () => (
 );
 
 export default Header;
-
-{
-  /* <div className="kalender">
-        <span> kalender</span>
-        <Calendar />
-      </div> */
-}

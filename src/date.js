@@ -44,33 +44,3 @@ export class Today extends Component {
 }
 
 export default Today;
-
-// function currentDate() {
-//     var d = new Date()
-
-//     var day = d.getDay();
-//     var date = d.getDate();
-//     var month = d.getMonth();
-
-//   currentDate = day + date + month;
-// }
-
-// export const Today = () => (
-//   <div>
-//     <span>{currentDate}</span>
-//   </div>
-// );
-
-//   render() {
-//     return (
-//       <div>
-//         <span>
-//           {this.props.day}, {new Date().getDay()}{" "}
-//           {new Date().getMonth(monthNames)}
-//         </span>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Today;
