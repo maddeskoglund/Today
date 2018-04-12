@@ -6,7 +6,7 @@ export class Geolocation extends Component {
   render() {
     var options = {
       enableHighAccuracy: true,
-      timeout: 5000,
+      timeout: 10000,
       maximumAge: 0
     };
 
@@ -29,7 +29,7 @@ export class Geolocation extends Component {
       <div>
         <span>Initial position:</span>
 
-        <span>{undefined}</span>
+        {/* <span>{crd.latitud}</span> */}
 
         <span>Current position:</span>
 

@@ -3,7 +3,7 @@ import Render from "react-dom";
 import "./App.css";
 import { Header } from "./header.js";
 import { Today } from "./date.js";
-import { Weather } from "./components/weather";
+import { WeatherApp } from "./components/weather";
 import { Geolocation } from "./components/geolocation";
 // import { Form } from "./components/form";
 // import Test from "./components/test";
@@ -25,9 +25,9 @@ export class App extends Component {
         {/* <Test /> */}
         <Header />
         <Today />
-        {/* <Form /> */}
-        {/* <Weather />
-        <Api_weather /> */}
+        {/* <Form />  */}
+        {/* {/* <Weather /> */}
+        <WeatherApp />
         <Geolocation />
         {/* <Form getWeather={this.getWeather} /> */}
       </div>
