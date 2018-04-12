@@ -30,7 +30,7 @@ export class Today extends Component {
 
     const theDay = new Date();
     const datum = theDay.getDate();
-    const veckodag = dayNames[theDay.getDay()];
+    const veckodag = dayNames[theDay.getDay() - 1];
     const month = monthNames[theDay.getMonth()];
 
     return (

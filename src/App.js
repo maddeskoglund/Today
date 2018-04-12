@@ -4,6 +4,7 @@ import "./App.css";
 import { Header } from "./header.js";
 import { Today } from "./date.js";
 import { Weather } from "./components/weather";
+import { Geolocation } from "./components/geolocation";
 // import { Form } from "./components/form";
 // import Test from "./components/test";
 
@@ -25,7 +26,9 @@ export class App extends Component {
         <Header />
         <Today />
         {/* <Form /> */}
-        <Weather />
+        {/* <Weather />
+        <Api_weather /> */}
+        <Geolocation />
         {/* <Form getWeather={this.getWeather} /> */}
       </div>
     );
