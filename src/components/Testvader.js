@@ -16,6 +16,7 @@ export class Vader extends Component {
             city: undefined,
             country: undefined,
             temperature: undefined,
+            icon: undefined,
             humidity: undefined,
             wind: undefined
         };
@@ -31,30 +32,41 @@ export class Vader extends Component {
                     city: data.city.name,
                     country: data.city.country,
                     temperature: Math.round(data.list.main.temp),
+                    icon: data.list.weather.icon,
                     humidity: data.main.humidity,
-                    wind: Math.round(data.wind.speed)
+                    wind: Math.round(data.list.wind.speed)
                 })
             })
             .catch((error) => console.log(error));
     };
 
+
+
+    renderWeather() {
+        return this.state.city;
+    }
+
+    // render() {
+    //     const {
+    //         city,
+    //         country,
+    //         temperature,
+    //         humidity,
+    //         wind
+    //     } = this.state
+
+
     render() {
-        const {
-            city,
-            country,
-            temperature,
-            humidity,
-            wind
-        } = this.state
-
-
         return (
-            <div>Hej
-                <span>{this.props.city}</span>
-                <span>{this.props.country}</span>
-                <span>{temperature}</span>
-            </div>
+            <div> Hej
+    < span > {this.props.city}</span >
+                <span>{this.state.country}</span>
+                <span></span>
+            </div >
         )
     };
 }
 export default Vader;
+
+
+
