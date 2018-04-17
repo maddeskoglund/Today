@@ -1,21 +1,15 @@
-// <div className="mood-container">
+import React from "react";
+import { Component } from "react";
 
-{
-  /* <img src={mood} className="img-mood" alt="mood-image" />; */
-}
-{
-  /* <div className="kalender">
-        <span> kalender</span>
-        <Calendar />
-      </div> */
-}
-import mood from "./mood-sun1.gif";
-// import Calendar from "react-icons/lib/fa/calendar";
+//My position
+// var lat = 59.6558445;
+// var long = 16.9026758;
 
+const API_KEY = 'd793be0d81fa72f049f684c0ba7ad86c';
+const lat = '59.6558445';
+const long = '16.9026758';
 
-save for later! This works perfect!! =)
-
-export class WeatherApp extends React.Component {
+export class Vadertest extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,8 +20,10 @@ export class WeatherApp extends React.Component {
       wind: undefined
     };
   }
+
+
   static defaultProps = {
-    city: "Barcelona"
+    city: "Enköping"
   };
   _getWeatherInfo = city => {
     const main = this;
@@ -40,35 +36,39 @@ export class WeatherApp extends React.Component {
     } else {
       query = city;
     }
+
+
     fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=50a34e070dd5c09a99554b57ab7ea7e2`
+      `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`
+      // `http://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=50a34e070dd5c09a99554b57ab7ea7e2`
     )
-      .then(function(response) {
+      .then(function (response) {
         return response;
       })
-      .then(function(response) {
-        setTimeout(function() {
+      .then(function (response) {
+        setTimeout(function () {
           main.setState({
             infoStatus: "loaded"
           });
         }, 300);
         return response.json();
       })
-      .then(function(data) {
+      .then(function (data) {
         main.setState({
-          city: data.name,
-          country: data.sys.country,
-          temperature: data.main.temp,
+          city: data.city.name,
+          country: data.city.country,
+          temperature: Math.round(data.list.main.temp),
           humidity: data.main.humidity,
-          wind: data.wind.speed
+          wind: Math.round(data.wind.speed)
         });
       })
-      .catch(function() {
+      .catch(function () {
         main.setState({
           infoStatus: "error"
         });
       });
   };
+
   componentWillMount() {
     this._getWeatherInfo();
   }
@@ -96,32 +96,34 @@ export class WeatherApp extends React.Component {
           </div>
           <div className="tempInfo">
             <div>
-              Temperature<span>{temperature}º</span>
+              Temperatur<span> {temperature}ºC</span>
             </div>
             <div>
               Humidity<span>{humidity}%</span>
             </div>
             <div>
-              Wind<span>{wind}m/s</span>
+              Vindstyrka:<span> {wind}m/s</span>
             </div>
           </div>
         </div>
       );
     } else if (infoStatus == "loading") {
-      data = <div className="info loading">Loading weather data...</div>;
+      data = <div className="info loading">Hämtar väder...</div>;
     } else if (infoStatus == "error") {
       data = (
-        <div className="info error">
-          Error while loading weather data. Try again later.
-        </div>
+        <div className="info error">Ett fel uppstod. Försök igen senare.</div>
       );
     }
     return (
       <div className="weatherApp">
         <div className="weatherQuery">
-          <form onSubmit={this._handleSubmit}>
-            <input type="text" name="search" placeholder="Search a City..." />
-          </form>
+          {/* <form onSubmit={this._handleSubmit}>
+            <input
+              type="text"
+              name="search"
+              placeholder="Sök efter en stad..."
+            />
+          </form> */}
         </div>
         {data}
       </div>
@@ -129,4 +131,5 @@ export class WeatherApp extends React.Component {
   }
 }
 
-export default WeatherApp;
+export default Vadertest;
+
