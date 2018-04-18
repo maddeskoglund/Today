@@ -9,7 +9,11 @@ export class Geolocation extends Component {
     console.log("Getting position");
     var getPosition = options => {
       console.log("requesting...");
+<<<<<<< HEAD
       return new Promise(function (resolve, reject) {
+=======
+      return new Promise(function(resolve, reject) {
+>>>>>>> c13438d87c14bd97a20e95568bce7ea98bdb509e
         navigator.geolocation.getCurrentPosition(resolve, reject, options);
       });
     };
