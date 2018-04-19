@@ -22,16 +22,17 @@ export class Vader extends Component {
         };
     }
 
-    componentDidMouth() {
-        fetch(`api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`)
+    componentDidMount() {
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
+                console.log(data.city.name)
                 this.setState({
                     city: data.city.name,
                     country: data.city.country,
-                    temperature: Math.round(data.list.main.temp),
+                    temperature: Math.round(data.list[0].main.temp),
                     icon: data.list.weather.icon,
                     humidity: data.main.humidity,
                     wind: Math.round(data.list.wind.speed)
@@ -42,9 +43,9 @@ export class Vader extends Component {
 
 
 
-    renderWeather() {
-        return this.state.city;
-    }
+    // renderWeather() {
+    //     return this.state.city;
+    // }
 
     // render() {
     //     const {
@@ -59,8 +60,9 @@ export class Vader extends Component {
     render() {
         return (
             <div> Hej
-    < span > {this.props.city}</span >
-                <span>{this.state.country}</span>
+                < span className='city' > {this.props.city}</span >
+                <span className='city'>{this.componentDidMount}</span>
+
                 <span></span>
             </div >
         )

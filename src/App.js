@@ -4,9 +4,8 @@ import "./App.css";
 import { Header } from "./header.js";
 import { Today } from "./components/date.js";
 import { Geolocation } from "./components/geolocation";
-import { Vader } from "./components/Testvader";
-// import { Vadertest } from "./components/vadertest";
-// import { WeatherApp } from "./components/weather";
+import { Vader } from "./components/Testvader1";
+
 
 export class App extends Component {
   render() {
@@ -15,9 +14,8 @@ export class App extends Component {
         <Header />
         <Today />
 
-
         <Vader />
-        {/* <Vadertest /> */}
+
         <Geolocation />
       </div>
     );
