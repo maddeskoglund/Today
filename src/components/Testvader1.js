@@ -23,12 +23,16 @@ export class Vader extends Component {
     }
 
     componentDidMount() {
-        const long = '16.9026758';
-        const lat = '59.6558445';
+        const API_KEY = 'd793be0d81fa72f049f684c0ba7ad86c';
+        const long = '16.90267';
+        const lat = '59.65584';
+        // const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`
         const url = `https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/${long}/lat/${lat}/data.json`
         fetch(url)
-            .then(response => response.json())
-            .then(json => {
+            .then((response) => {
+                return response.json()
+            })
+            .then((json) => {
                 console.log(json);
                 // this.setState({
                 //     city: data.city.name,

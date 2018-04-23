@@ -15,7 +15,6 @@ export class Geolocation extends Component {
       });
     };
 
-
     getPosition()
       .then(position => {
         console.log('got it!');
