@@ -4,6 +4,7 @@ import "./App.css";
 import { Header } from "./header.js";
 import { Today } from "./components/date.js";
 import { Geolocation } from "./components/geolocation";
+import { Day1 } from "./components/Day1";
 import { Vader } from "./components/Testvader";
 
 
@@ -13,7 +14,7 @@ export class App extends Component {
       <div>
         <Header />
         <Today />
-
+        <Day1 />
         <Vader />
 
         <Geolocation />

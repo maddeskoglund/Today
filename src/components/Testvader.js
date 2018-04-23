@@ -13,12 +13,13 @@ export class Vader extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            city: undefined,
-            country: undefined,
-            temperature: undefined,
-            icon: undefined,
-            humidity: undefined,
-            wind: undefined
+
+            // city: undefined,
+            // country: undefined,
+            // temperature: undefined,
+            // icon: undefined,
+            // humidity: undefined,
+            // wind: undefined
         };
     }
 
@@ -59,13 +60,12 @@ export class Vader extends Component {
         const tomorrowPlus1Temp21 = []
         const tomorrowPlus1Icon21 = []
 
-        // fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`)
         fetch(`https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/${long}/lat/${lat}/data.json`)
             .then((response) => {
                 return response.json();
             })
             .then((data) => {
-                // console.log(data)
+                // console.log(data.timeSeries[0])
 
                 // To get the right data for three days
                 const today = new Date();
@@ -74,18 +74,13 @@ export class Vader extends Component {
                 const tomorrowStr = tomorrow.toLocaleString().slice(0, 10);
                 const tomorrowPlus1 = new Date(tomorrow.setDate(tomorrow.getDate() + 1));
                 const tomorrowPlus1Str = tomorrowPlus1.toLocaleString().slice(0, 10);
-
-                const timeNow = today.getTime();
-                const timeNowStr = `"T${timeNow.toLocaleString().slice(0, 3)}:00:00Z"`;
-                // const timeNowStrTest = "T15:00:00Z"
                 const time09 = "T09:00:00Z";
                 const time12 = "T12:00:00Z";
                 const time15 = "T15:00:00Z";
                 const time18 = "T18:00:00Z";
                 const time21 = "T21:00:00Z";
 
-                console.log(timeNow)
-                console.log(timeNowStr)
+
                 // t = temperature
                 // ws = windspeed
                 //wsymb2 = weathersymbol
@@ -113,10 +108,16 @@ export class Vader extends Component {
 
                     // Correct hours
                     // Now
-                    if (validTime.startsWith(todayStr) && validTime.endsWith(timeNowStr)) {
-                        tempNow.push(temperature)
-                        // todayIcon09.push(weathersymbol)
-                    }
+                    // if (validTime.startsWith(todayStr) && validTime.endsWith(timeNowStr)) {
+                    //     tempNow.push(temperature)
+                    // todayIcon09.push(weathersymbol)
+                    // }
+
+
+                    // if (data.timeSeries[0]) {
+                    //     tempNow.push(temperature)
+                    // }
+
                     // Today
                     if (validTime.startsWith(todayStr) && validTime.endsWith(time09)) {
                         todayTemp09.push(temperature)
@@ -167,17 +168,11 @@ export class Vader extends Component {
                         tomorrowPlus1Icon21.push(weathersymbol)
                     }
 
-
-
-
-
-
                 });
-                console.log(tempNow)
 
 
 
-
+                console.log(tomorrowTemp09)
 
 
 
@@ -194,18 +189,6 @@ export class Vader extends Component {
     };
 
 
-    // tempNow
-    // iconNow
-    // todayTemp00
-    // todayTemp06
-    // todayTemp12
-    // todayTemp18
-    // todayTemp00
-    // tomorrowTemp00
-    // tomorrowTemp06
-    // tomorrowTemp12
-    // tomorrowTemp18
-    // tomorrowTemp00
 
     // wind?
     // rain?
@@ -214,24 +197,13 @@ export class Vader extends Component {
 
 
 
-    // renderWeather() {
-    //     return this.state.city;
-    // }
 
-    // render() {
-    //     const {
-    //         city,
-    //         country,
-    //         temperature,
-    //         humidity,
-    //         wind
-    //     } = this.state
 
 
     render() {
         return (
             <div> Hej
-                < span className='city' > {this.props.city}</span >
+                < span className='city' > {this.props.tomorrowTemp09}</span >
                 <span className='city'></span>
 
                 <span></span>
