@@ -202,12 +202,6 @@ export class Vader extends Component {
                         </div>
                     </div>
 
-
-
-
-
-
-
                 </div >
 
 

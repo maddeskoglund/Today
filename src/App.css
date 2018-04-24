@@ -43,6 +43,7 @@
 
 .invcontainer09 {
   width:200px;
+  height:100px;
   border: solid white 0.5px;
   
 }
@@ -60,5 +61,5 @@
 }
 
 .time {
-float:left;
+
 }
