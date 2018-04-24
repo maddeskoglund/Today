@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+// import Day1 from './Day1'
 
 //My position
 // var lat = 59.6558445;
@@ -12,15 +13,7 @@ const long = '16.90267';
 export class Vader extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-            // city: undefined,
-            // country: undefined,
-            // temperature: undefined,
-            // icon: undefined,
-            // humidity: undefined,
-            // wind: undefined
-        };
+        this.state = {};
     }
 
     componentDidMount() {
@@ -174,16 +167,11 @@ export class Vader extends Component {
 
                 console.log(tomorrowTemp09)
 
+                this.setState({
+                    tomorrowTemp09
+                })
 
 
-                //     this.setState({
-                //         city: data.city.name,
-                //         country: data.city.country,
-                //         tempNow: Math.round(data.list[0].main.temp),
-                //         iconNow: data.list[0].weather[0].icon,
-                //         humidity: data.main.humidity,
-                //         wind: Math.round(data.list.wind.speed)
-                // })
             })
             .catch((error) => console.log(error));
     };
@@ -202,9 +190,30 @@ export class Vader extends Component {
 
     render() {
         return (
-            <div> Hej
-                < span className='city' > {this.props.tomorrowTemp09}</span >
-                <span className='city'></span>
+            <div>
+                <div className='invcontainer09' >
+                    <div className='container09'>
+                        <div className='wsymb'>
+                            {/* Vädersymbols */}
+                        </div>
+                        <div className='time'>
+                            9.00
+                            {this.state.tomorrowTemp09}°C
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div >
+
+
+                <div></div>
+                <div></div>
+
 
                 <span></span>
             </div >
@@ -214,4 +223,6 @@ export class Vader extends Component {
 export default Vader;
 
 
-
+{/* <Day1
+                    tomorrowtemp09={this.state.tomorrowTemp09}
+                /> */}

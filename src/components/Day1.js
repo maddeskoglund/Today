@@ -6,8 +6,19 @@ export class Day1 extends Component {
     render() {
         return (
             <div>
-                {this.props.todayTemp09}
+                {/* <div className='Kl09'>
+                    <span className='content'> {this.props.tomorrowtemp09} </span>
+
+                </div> */}
+
+
+
+                {/* {this.state.tomorrowTemp09} */}
+                {/* < span className='city' > {this.state.tomorrowTemp09}</span > */}
+
             </div>
         )
     }
 }
+
+export default Day1;
