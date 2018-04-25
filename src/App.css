@@ -46,6 +46,7 @@
   height:100px;
   border: solid white 0.5px;
   
+  
 }
 
 .container09 {
@@ -60,6 +61,6 @@
   
 }
 
-.time {
-
+.content {
+color: yellow;
 }

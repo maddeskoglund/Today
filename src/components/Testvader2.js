@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import Day1 from './Day1'
+
 
 //My position
 // var lat = 59.6558445;
@@ -13,7 +13,24 @@ const long = "16.90267";
 export class Vader extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            Today: {
+                temp: [{
+                    kl09: [],
+                    kl12: [],
+                    kl15: [],
+                    kl18: [],
+                    kl21: [],
+                }],
+                icon: [{
+                    kl09: [],
+                    kl12: [],
+                    kl15: [],
+                    kl18: [],
+                    kl21: [],
+                }],
+            }
+        };
     }
 
     componentDidMount() {
